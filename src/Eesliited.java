@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 
 /**
  * Created by Andra on 16.03.2016.
@@ -12,7 +13,8 @@ public class Eesliited {
         Eesliited.nimi = nimi;
     }
 
-    public void prindi(){                                                                                                  //SWITCH, vajab info lisamist, peaks töötama
+    public void prindi(){                                                                                                   //SWITCH, vajab info lisamist, peaks töötama
+        DecimalFormat df = new DecimalFormat("#.####################################################");
         switch (nimi) {
             case "GIGA":
                 väärtus = ss.setVäärtus(1000000000.0);
@@ -92,25 +94,25 @@ public class Eesliited {
             case "NULL":
                 switch (nimi2) {
                     case "GIGA":
-                        System.out.println(ss.getSuurus() + " meetrit on " + ss.getSuurus() / 1000000000.0 + " gigameetrit");
+                        System.out.println(ss.getSuurus() + " meetrit on " + df.format(ss.getSuurus() / 1000000000.0) + " gigameetrit");
                         break;
                     case "MEGA":
-                        System.out.println(ss.getSuurus() + " meetrit on " + ss.getSuurus() / 1000000.0 + " megameetrit");
+                        System.out.println(ss.getSuurus() + " meetrit on " + df.format(ss.getSuurus() / 1000000.0) + " megameetrit");
                         break;
                     case "KILO":
-                        System.out.println(ss.getSuurus() + " meetrit on " + ss.getSuurus() / 1000.0 + " kilomeetrit");
+                        System.out.println(ss.getSuurus() + " meetrit on " + df.format(ss.getSuurus() / 1000.0) + " kilomeetrit");
                         break;
                     case "SENTI":
-                        System.out.println(ss.getSuurus() + " meetrit on " + ss.getSuurus() / 0.01 + " sentimeetrit");
+                        System.out.println(ss.getSuurus() + " meetrit on " + df.format(ss.getSuurus() / 0.01) + " sentimeetrit");
                         break;
                     case "MILLI":
-                        System.out.println(ss.getSuurus() + " meetrit on " + ss.getSuurus() / 0.001 + " millimeetrit");
+                        System.out.println(ss.getSuurus() + " meetrit on " + df.format(ss.getSuurus() / 0.001) + " millimeetrit");
                         break;
                     case "NANO":
-                        System.out.println(ss.getSuurus() + " meetrit on " + ss.getSuurus() / 0.000000001 + " nanomeetrit");
+                        System.out.println(ss.getSuurus() + " meetrit on " + df.format(ss.getSuurus() / 0.000000001) + " nanomeetrit");
                         break;
                     case "PIKO":
-                        System.out.println(ss.getSuurus() + " meetrit on " + ss.getSuurus() / 0.000000000001 + " pikomeetrit");
+                        System.out.println(ss.getSuurus() + " meetrit on " + df.format(ss.getSuurus() / 0.000000000001) + " pikomeetrit");
                         break;
                     default:
                         System.out.println("Midagi läks valesti, kui asi nii kaugele jõudis");

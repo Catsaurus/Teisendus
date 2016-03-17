@@ -1,6 +1,10 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+//Füüsika eeslidete teisendamise programm
+//by Kalle ja Andra
+//Teisendab valitud füüsika eesliiteid
+
 /**
  * Created by Andra on 16.03.2016.
  */
@@ -49,7 +53,6 @@ public class ss {
             System.out.println("Sisesta number: ");
             suurus = scan.nextDouble();
         } catch (InputMismatchException exception) {
-
             System.out.println("See ei ole number");
         }
 
