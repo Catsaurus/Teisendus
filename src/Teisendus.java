@@ -2,16 +2,12 @@
  * Created by Andra on 16.03.2016.
  */
 public class Teisendus {
-    static double v;
-    //static boolean s = false;
-    public static double vabaneEesliitest;
-    public static double võtaEesliide;
 
     public static double vabanemineEesliitest() {
         return ss.getSuurus() * ss.getVäärtus();
     }
 
-    /*public static double eesliiteJuurdeVõtmine() {
+    /*public static double eesliiteJuurdeVõtmine() {                                                                     //Äkki läheb vaja
         return ss.getSuurus() / ss.getVäärtus();
     }*/
 

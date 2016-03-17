@@ -25,9 +25,6 @@ public class ss {
         return suurus;
     }
 
-    //public static String getÜhik() {                                                                                   //pole vaja
-    //    return ühik;
-    //}
 
     public static String getEesliide1() {
         return eesliide1;
@@ -35,24 +32,11 @@ public class ss {
     public static double getVäärtus(){
         return väärtus;
     }
-    //public  static String getEesliide2(){                                                                             //pole vaja
-    //    return eesliide2;
-    //}
 
-    public static double setVäärtus(double väärtus) {                                                                   //setter, pole kindel selle vajlikkuses
+    public static double setVäärtus(double väärtus) {
         ss.väärtus = väärtus;
         return väärtus;
     }
-
-
-
-    /*void ekraanile() {                                                                                                //kontrolliks, kas töötab
-        System.out.println("Sisestasid suuruseks " + suurus);
-        System.out.println("Sisestasid ühikuks " + ühik);
-        System.out.println("Sisestasid eesliite " + eesliide1);
-        System.out.println("prindin hetkel eesliite väärtuse: " );
-        System.out.println("prindin teise eesliite " + eesliide2);
-    }*/
 
 
     public static void main(String[] args) {                                                                            //peameetod
@@ -73,7 +57,7 @@ public class ss {
         try {
             System.out.println("Sisesta ühik(default ühik meeter, sellel hetkel tähtsust pole): ");                     //kontrollib, kas ühik on String
             ss.ühik = scan1.nextLine();
-        } catch (NumberFormatException ex) {                                                                            //see on prktiliselt mõttetu siin
+        } catch (InputMismatchException ex) {                                                                            //see on prktiliselt mõttetu siin
             System.out.println("See ei ole ühik!");                                                                     //aga see võiks ikkagi kontrollida, kas on String
         }
 
@@ -81,7 +65,7 @@ public class ss {
             //System.out.println(java.util.Arrays.asList(Eesliited.Eesliiteid.values()));
             System.out.println("Kirjuta ühiku eesliide: GIGA, MEGA, KILO, SENTI, MILLI, NANO, PIKO"+"\n"+"Kui see puudub, sisesta NULL(sõnadega paluks) ");
             eesliide1 = scan2.next();
-        } catch (NumberFormatException ex) {
+        } catch (InputMismatchException ex) {
             System.out.println("See ei ole eesliide!");
         }
 
@@ -89,20 +73,12 @@ public class ss {
             System.out.println("Kirjuta, mis eesliiteks tahad teisendada: GIGA, MEGA, KILO, SENTI, MILLI, NANO, PIKO. "+"\n"+ "Kui ei soovi eesliidet lisada, sisesta NULL ");
             eesliide2 = scan3.next();
         }
-        catch(NumberFormatException exc) {
+        catch(InputMismatchException ex) {
             System.out.println("See ei ole eesliide!");
         }
 
-
-
-        //ss s = new ss(suurus, ühik, eesliide1, väärtus, eesliide2);                                                   //kontrollimiseks, kas töötab
-        //s.ekraanile();
-
         Eesliited v1 = new Eesliited(Eesliited.nimi);
             v1.prindi();
-
     }
-
-
 }
 
