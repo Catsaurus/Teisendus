@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by Andra on 16.03.2016.
  */
-public class ss {
+public class Test {
 
     public static double suurus;                                                                                        //staatilised muutujad
     public static String ühik;
@@ -17,12 +17,12 @@ public class ss {
     public static String eesliide2;
 
 
-    public ss(double suurus, String ühik, String eesliide1, double väärtus,String eesliide2) {                          //konstruktor, et klassile ss omastada muutujad
-        ss.suurus = suurus;
-        ss.ühik = ühik;
-        ss.eesliide1 = eesliide1;
-        ss.väärtus = väärtus;
-        ss.eesliide2 = eesliide2;
+    public Test(double suurus, String ühik, String eesliide1, double väärtus, String eesliide2) {                          //konstruktor, et klassile Test omastada muutujad
+        Test.suurus = suurus;
+        Test.ühik = ühik;
+        Test.eesliide1 = eesliide1;
+        Test.väärtus = väärtus;
+        Test.eesliide2 = eesliide2;
     }
 
     public static double getSuurus() {                                                                                   //getter
@@ -38,7 +38,7 @@ public class ss {
     }
 
     public static double setVäärtus(double väärtus) {
-        ss.väärtus = väärtus;
+        Test.väärtus = väärtus;
         return väärtus;
     }
 
@@ -52,14 +52,14 @@ public class ss {
         try {                                                                                                           //kontrollib, et sisend oleks ikka int
             System.out.println("Sisesta number: ");
             suurus = scan.nextDouble();
-        } catch (InputMismatchException exception) {
+            } catch (InputMismatchException exception) {                                                                //double numbri sisendis kasutatakse koma
             System.out.println("See ei ole number");
         }
 
 
         try {
             System.out.println("Sisesta ühik(default ühik meeter, sellel hetkel tähtsust pole): ");                     //kontrollib, kas ühik on String
-            ss.ühik = scan1.nextLine();
+            Test.ühik = scan1.nextLine();
         } catch (InputMismatchException ex) {                                                                            //see on prktiliselt mõttetu siin
             System.out.println("See ei ole ühik!");                                                                     //aga see võiks ikkagi kontrollida, kas on String
         }
