@@ -3,6 +3,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -11,9 +12,9 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -22,17 +23,15 @@ import java.util.Scanner;
  * Created by Andra on 19.05.2016.
  */
 public class Test extends Application{
-    static double ee;
-    static String ss;
-    static String mm;
+    static double arv;
+    static String esimeneEesliide;
+    static String teineEesliide;
     static ArrayList<String> Liited = new ArrayList<>(Arrays.asList("piko", "nano", "milli", "senti", "", "null", "kilo", "mega", "giga", "jotta",
             "zetta", "eksa", "peta", "tera", "hekto", "deka", "detsi", "mikro", "femtp", "ato", "zepto", "jokto"));
 
-    public static double getSuurus() {return ee;}
-    public static String getEesliide1() {return ss;}
-    public static String getEesliide2() {return mm;}
-
-
+    public static double getSuurus() {return arv;}
+    public static String getEesliide1() {return esimeneEesliide;}
+    public static String getEesliide2() {return teineEesliide;}
 
     public static void main(String[] args) {launch(args);}
 
@@ -84,7 +83,7 @@ public class Test extends Application{
         while (vas.hasNextLine()) {Vastus.add(vas.nextLine());}
         vas.close();
 
-        if (!(ee == 0) && !(ss.equals("")) && !(mm.equals(""))) {
+        if (!(arv == 0) && !(esimeneEesliide.equals("")) && !(teineEesliide.equals(""))) {
             Eesliited Xmas = new Eesliited(Vastus);
             System.out.println(Xmas);
         }
@@ -108,7 +107,7 @@ public class Test extends Application{
             Text probleem = new Text("Try again!");
             probleem.setStyle("-fx-fill: RED;-fx-font-weight:normal;");
             if (Nr1.getText().matches("[+-]?\\d*\\.?\\d+")) {
-                ee = Double.parseDouble(Nr1.getText());
+                arv = Double.parseDouble(Nr1.getText());
                 N1.getChildren().clear();
                 N1.getChildren().add(KysNr1);
                 x = true;
@@ -118,7 +117,7 @@ public class Test extends Application{
                 x = false;
             }
             if (Liited.contains(Nr2.getText().toLowerCase())) {
-                ss = Nr2.getText().toLowerCase();
+                esimeneEesliide = Nr2.getText().toLowerCase();
                 N2.getChildren().clear();
                 N2.getChildren().add(KysNr2);
                 y = true;
@@ -128,7 +127,7 @@ public class Test extends Application{
                 y = false;
             }
             if (Liited.contains(Nr3.getText().toLowerCase())){
-                mm = Nr3.getText().toLowerCase();
+                teineEesliide = Nr3.getText().toLowerCase();
                 N3.getChildren().clear();
                 N3.getChildren().add(KysNr3);
                 z = true;
@@ -145,6 +144,7 @@ public class Test extends Application{
         });
         primaryStage.setTitle("Teisendamine");
         primaryStage.setScene(stseen);
+
         primaryStage.show();
     }
 }

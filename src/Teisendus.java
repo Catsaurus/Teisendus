@@ -2,9 +2,8 @@
  * Created by Andra on 19.05.2016.
  */
 public class Teisendus {
-    public static double Teisenda(String nimi, String nimi2, double ühik) {
-        double suurus = ühik;
-        switch (nimi){
+    public static double Teisenda(String suurus1, String suurus2, double suurus) {
+        switch (suurus1){
             case "jotta": suurus = suurus * 1000000000000000000000000.0;break;
             case "zetta": suurus = suurus * 1000000000000000000000.0;break;
             case "eksa": suurus = suurus * 1000000000000000000.0;break;
@@ -26,7 +25,7 @@ public class Teisendus {
             case "zepto": suurus = suurus * 0.000000000000000000001;break;
             case "jokto": suurus = suurus * 0.000000000000000000000001;break;
             default: break;}
-        switch (nimi2) {
+        switch (suurus2) {
             case "jotta": suurus = suurus / 1000000000000000000000000.0;break;
             case "zetta": suurus = suurus / 1000000000000000000000.0;break;
             case "eksa": suurus = suurus / 1000000000000000000.0;break;
